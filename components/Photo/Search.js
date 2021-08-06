@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { createApi } from "unsplash-js";
 import { useState } from "react";
 import Photo from "./Photo";
@@ -5,7 +6,7 @@ import styled from "styled-components";
 import { Button } from "@material-ui/core";
 
 const api = createApi({
-  accessKey: "TgTs0S1mPzH-jov2BSXitWkFaqMaxTc9OWze5asLFb0",
+  accessKey: process.env.NEXT_PUBLIC_ACCESS_KEY,
 });
 
 const Search = () => {

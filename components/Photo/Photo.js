@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
@@ -21,7 +22,7 @@ Photo.propTypes = {
   link: PropTypes.string.isRequired,
 };
 
-export default Photo;
+export default Photo; 
 
 const Wrapper = styled.div``;
 

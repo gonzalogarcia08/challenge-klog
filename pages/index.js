@@ -8,7 +8,7 @@ export default function Home() {
         <title>Challenge Klog</title>
         <meta
           name="description"
-          content="Prueba técnica de desarrollo web para Klog con Next.js"
+          content="Prueba técnica de desarrollo web para la empresa Klog, con Next.js"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
