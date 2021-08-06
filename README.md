@@ -1,34 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Test de programación – Klog.co
 
-## Getting Started
+Front end creado con [Create Next App](https://nextjs.org/docs/getting-started).
 
-First, run the development server:
+## Scripts disponibles
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+En la raíz de este directorio se puede ejecutar
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### `npm run dev`
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Corre aplicación en entorno de desarrollo
+Abrir [http://localhost:3000](http://localhost:3000) para visualizar aplicación.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### `npm run build`
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Crea los minificados productivos.
 
-## Learn More
+### Requerimientos generales del desafío
 
-To learn more about Next.js, take a look at the following resources:
+El objetivo de esta prueba es realizar una app en Next.js que pueda buscar imágenes y desplegarlas en la misma
+pagina.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Requerimientos funcionales del desafío
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Las imágenes deben venir desde https://unsplash.com/documentation, es necesario crear una cuenta para
+poder acceder a la API
+- La app debe tener un input y un botón que, al apretarse, la pagina debe mostrar las imágenes relacionadas
+a lo ingresado en el input.
+- La app debe subirse a tu cuenta de GitHub/GitLab/Etc y debes enviarnos el link al correo ya conversado.
 
-## Deploy on Vercel
+## Notas adicionales del desafío (Tips)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Se recomienda usar create-next-app para levantar la app. https://nextjs.org/docs/getting-started
+- Hay puntos extra por utilizar conceptos de ES6, por usar CSS y por deployear la app a Vercel.
+- Ejemplo de como se debería ver la app
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![image](https://user-images.githubusercontent.com/60905327/128563997-2468be1f-e582-4eb1-aafc-fa6a3cd649ae.jpg)
+
+## CI/CD
+
+Para efectos de deployment el desafío fue subido a Vercel. Puedes ver el demo en este [link](https://challenge-klog.vercel.app/)
+
+## Screenshots
+
+A continuaciómn unas imagenes del proyecto:
+
+- Inicio
+![image](https://user-images.githubusercontent.com/60905327/128564243-793ece20-0c0d-4656-83b3-1195b83efccf.jpg)
+
+- Resultados
+![image](https://user-images.githubusercontent.com/60905327/128564249-185f8196-caa9-41e5-9571-8e139f89412c.jpg)
+
+- Sin Resultados
+![image](https://user-images.githubusercontent.com/60905327/128564256-5d4a0fc9-487e-438f-9b19-aacea7d13268.jpg)
+
+## Autor
+
+- Gonzalo García Madrid (gonzalogarciam010@gmail.com )
