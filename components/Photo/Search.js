@@ -12,6 +12,7 @@ const api = createApi({
 const Search = () => {
   const [data, setData] = useState(null);
   const [search, setSearch] = useState("");
+  const [error, setError] = useState("");
 
   const handleOnChange = ({ target: { value } }) => {
     setSearch(value);
@@ -22,7 +23,16 @@ const Search = () => {
     if (search.trim()) {
       api.search
         .getPhotos({ query: search, per_page: 4, orientation: "landscape" })
-        .then((res) => (res.response.total > 0 ? setData(res) : setData(null)))
+        .then((res) => {
+          if (res.response.total > 0) {
+            setError("");
+            setData(res);
+          } else {
+            const message = "No se encontraron resultados para su búsqueda.";
+            setError(message);
+            setData(null);
+          }
+        })
         .catch((e) => console.error("error: ", e));
     }
     setData(null);
@@ -54,6 +64,12 @@ const Search = () => {
           </PhotoContainer>
         </Header>
       )}
+
+      {error && (
+        <Header>
+          <ErrorMessage>{error}</ErrorMessage>
+        </Header>
+      )}
     </Container>
   );
 };
@@ -65,16 +81,19 @@ const Container = styled.div`
   height: 100vh;
 `;
 
+const ErrorMessage = styled.p`
+  display: grid;
+  align-items: center;
+  color: #e65100;
+  font-size: 25px;
+  font-weight: bold;
+`;
+
 const Form = styled.form`
   display: flex;
   flex-direction: column;
   place-items: center;
   width: inherit;
-`;
-
-const NoResultsMessage = styled.p`
-  font-size: 25px;
-  font-weight: bold;
 `;
 
 const Header = styled.div`
