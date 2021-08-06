@@ -22,7 +22,7 @@ const Search = () => {
     if (search.trim()) {
       api.search
         .getPhotos({ query: search, per_page: 4, orientation: "landscape" })
-        .then((res) => setData(res))
+        .then((res) => (res.response.total > 0 ? setData(res) : setData(null)))
         .catch((e) => console.error("error: ", e));
     }
     setData(null);
@@ -44,7 +44,7 @@ const Search = () => {
         </SearchContainer>
       </Header>
 
-      {data && (
+      {data?.response.total > 0 && (
         <Header>
           <TitleResponse>Respuesta de búsqueda</TitleResponse>
           <PhotoContainer>
@@ -70,6 +70,11 @@ const Form = styled.form`
   flex-direction: column;
   place-items: center;
   width: inherit;
+`;
+
+const NoResultsMessage = styled.p`
+  font-size: 25px;
+  font-weight: bold;
 `;
 
 const Header = styled.div`
